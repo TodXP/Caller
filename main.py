@@ -6,10 +6,10 @@ os.system("clear")
 
 while True:
     
-    ntc = input("Enter the number you want to call: ")
+    ntc = int(input("Enter the number you want to call: "))
 
     match ntc:
-        case "1":
+        case 1:
             print("Calling TOD")
-        case "2":
+        case 2:
             print("Calling cops")
