@@ -1,6 +1,11 @@
 TODO:
 
-- Calling with people
-- Entering automations
+- Server
+    Backend 
+        Received calls -> place 0
 
-- Phone number
+- Clients
+    Type in number -> call that
+
+    Put in asterisk -> Call to outside
+
