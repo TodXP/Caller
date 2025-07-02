@@ -11,6 +11,7 @@ class Server():
         self.hostport = 5555
 
         self.clients = []
+        self.client_threads = []
 
     def handle_client(self, client_socket, client_address):
         #Try's to handle all the clients at the same time.
@@ -54,6 +55,13 @@ class Server():
             client_socket, client_address = server_socket.accept()
             print(f"Added a new user: {client_address}")
 
+            # Adding a client to our list of clients
+            self.add_client(client_socket)
+
+            # Giving the clients a user
+            client_thread = threading.Thread(target=self.handle_client, args=(client_socket, client_address))
+            self.client_threads.append(client_thread)
+            client_thread.start()
 
 if __name__ == "__main__":
     server = Server()
